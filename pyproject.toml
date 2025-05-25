@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compactformer"
+version = "0.1.0"
+description = "Compact Transformer Variants for Time Series Forecasting"
+authors = [
+    {name = "Ali Forootan", email = "aliforootan@ieee.org"}
+]
+readme = "README.md"
+requires-python = ">=3.10.6"
+dependencies = [
+    "numpy==1.24.4",
+    "pandas==1.5.3",
+    "matplotlib==3.7.1",
+    "scikit-learn==1.2.2",
+    "scipy==1.10.1",
+    "torch==2.0.1"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/compactformer"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.scripts]
+compactformer-autoformer-grid = "compactformer.scripts.run_autoformer_grid:main"
+compactformer-informer-grid = "compactformer.scripts.run_informer_grid:main"
+compactformer-patchtst-grid = "compactformer.scripts.run_patchtst_grid:main"
+
