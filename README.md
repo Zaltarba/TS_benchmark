@@ -23,7 +23,7 @@
 Clone the repository and install in **editable/development mode** (recommended for research):
 
 ```bash
-git clone https://github.com/yourusername/compactformer.git
+git clone git@github.com:Ali-Forootani/compactformer.git
 cd compactformer
 pip install -e .
 ````
