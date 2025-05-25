@@ -167,7 +167,9 @@ Each command will run a full grid search experiment and save outputs in `simulat
 If you use **CompactFormer** in your research, please cite:
 
 ```
-Ali Forootan. "CompactFormer: Unified Transformer Variants for Time Series Forecasting", 2025.
+Ali Forootan. "Synthetic Time Series Forecasting with Transformer
+Architectures: A Comparative Study of
+Autoformer , Informer , and PatchTST", 2025.
 ```
 
 (Add DOI/citation when published.)
