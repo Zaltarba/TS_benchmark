@@ -1,15 +1,4 @@
-Certainly! Here’s a revised **README.md** for your `compactformer` package, fully tailored to your actual directory structure, CLI integration, and scientific context.
-Changes and improvements include:
-
-* **CLI usage section** (with both direct Python and command-line interface).
-* **Project structure** reflects your actual tree.
-* **Picture paths** are adjusted.
-* **Contact, citation, and features clarified**.
-* **Requirements synced to `pyproject.toml`**.
-* **Contribution and advanced usage sections** can be added on request.
-
 ---
-
 ````markdown
 # CompactFormer
 
