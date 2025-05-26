@@ -2,7 +2,7 @@
 ````markdown
 # CompactFormer
 
-**CompactFormer** is a modular, research-grade Python package for
+`CompactFormer` is a modular, research-grade Python package for
  unified transformer-based time series forecasting. 
 
 It implements and benchmarks PatchTST, Autoformer, and Informer variants,
