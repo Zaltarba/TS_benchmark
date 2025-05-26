@@ -9,7 +9,8 @@ It implements and benchmarks PatchTST, Autoformer, and Informer variants,
 supporting grid search, reproducible experiments, and high-quality result visualizations.
 
 This repository contains the code and experiments used for the study of
-Transformer-based architectures for time series forecasting, as presented in the article **Synthetic Time Series Forecasting with Transformer Architectures: A Comparative Study of Autoformer, Informer, and PatchTST**.
+Transformer-based architectures for time series forecasting, as presented in the article
+*Synthetic Time Series Forecasting with Transformer Architectures: A Comparative Study of Autoformer, Informer, and PatchTST*.
 
 The study compares three prominent Transformer models—Autoformer, Informer,
 and PatchTST—evaluating their performance on a variety of synthetic time series signals.
