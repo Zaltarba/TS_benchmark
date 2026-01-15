@@ -82,10 +82,13 @@ class SDAMultiheadAttention(Module):
         K = self.k_proj(key)
         V = self.v_proj(value)
 
-        # Reshape for multi-head: (seq, batch, num_heads, head_dim)
-        Q = Q.view(seq_len, batch_size, self.num_heads, self.head_dim).transpose(1, 2)  # (batch, heads, seq, head_dim)
-        K = K.view(-1, batch_size, self.num_heads, self.head_dim).transpose(1, 2)
-        V = V.view(-1, batch_size, self.num_heads, self.head_dim).transpose(1, 2)
+        seq_len_q, batch_size, _ = Q.shape
+        seq_len_k, batch_size, _ = K.shape
+        seq_len_v, batch_size, _ = V.shape
+
+        Q = Q.view(batch_size, self.num_heads, seq_len_q, self.head_dim)
+        K = K.view(batch_size, self.num_heads, seq_len_k, self.head_dim)
+        V = V.view(batch_size, self.num_heads, seq_len_v, self.head_dim)
 
         # Scaled dot-product attention
         scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(self.head_dim)  # (batch, heads, seq_q, seq_k)

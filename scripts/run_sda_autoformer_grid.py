@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 import torch
 from torch.utils.data import DataLoader
 
-from src.models.autoformer import StandardAutoformer, MinimalAutoformer, FullAutoformer
+from src.models.sda_autoformer import SDAStandardAutoformer, SDAMinimalAutoformer, SDAFullAutoformer
 from src.datasets import TimeSeriesDataset
 from src.data_simulation.signals import generate_noisy_smooth_signals
 from src.train import train_autoformer_model
@@ -27,16 +27,18 @@ def main():
     # -------- Configurable Parameters -------- #
     patch_lengths = [4, 8, 12, 16, 20]
     horizons = [4, 8, 12, 16, 20]
-    results_dir = "simulation_results"
+    patch_lengths = [4, 8,]
+    horizons = [4, 8,]
+    results_dir = "simulation_results_sda"
     os.makedirs(results_dir, exist_ok=True)
-    epochs = 6
+    epochs = 10
     batch_size = 32
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     models_dict = [
-        ("Minimal", MinimalAutoformer),
-        ("Standard", StandardAutoformer),
-        ("Full", FullAutoformer),
+        ("Minimal", SDAMinimalAutoformer),
+        ("Standard", SDAStandardAutoformer),
+        ("Full", SDAFullAutoformer),
     ]
 
     t, signals = generate_noisy_smooth_signals()
@@ -77,27 +79,27 @@ def main():
                         "MAE": mae,
                     }
                 )
+                if False:
+                    # Short Forecast Plot
+                    plt.figure(figsize=(12, 3))
+                    for i in range(min(3, len(preds))):
+                        plt.plot(trues[i], label="True", color="black")
+                        plt.plot(preds[i], label="Pred", linestyle="--")
+                        plt.title(f"{sig_name} - {model_name} (short)")
+                        plt.grid()
+                        plt.legend()
+                        plt.show()
 
-                # Short Forecast Plot
-                plt.figure(figsize=(12, 3))
-                for i in range(min(3, len(preds))):
-                    plt.plot(trues[i], label="True", color="black")
-                    plt.plot(preds[i], label="Pred", linestyle="--")
-                    plt.title(f"{sig_name} - {model_name} (short)")
+                    # Long Forecast Plot
+                    plt.figure(figsize=(14, 4))
+                    plt.plot(t[-len(long_trues) :], long_trues, label="True", color="black")
+                    plt.plot(
+                        t[-len(long_preds) :], long_preds, label=f"{model_name}", linestyle="--"
+                    )
+                    plt.title(f"{sig_name} - {model_name} (long)")
                     plt.grid()
                     plt.legend()
                     plt.show()
-
-                # Long Forecast Plot
-                plt.figure(figsize=(14, 4))
-                plt.plot(t[-len(long_trues) :], long_trues, label="True", color="black")
-                plt.plot(
-                    t[-len(long_preds) :], long_preds, label=f"{model_name}", linestyle="--"
-                )
-                plt.title(f"{sig_name} - {model_name} (long)")
-                plt.grid()
-                plt.legend()
-                plt.show()
 
     # ==== Save and Show Results ====
     df_results = pd.DataFrame(results)
