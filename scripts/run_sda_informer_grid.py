@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 import torch
 from torch.utils.data import DataLoader
 
-from src.models.informer import InformerMinimal, InformerStandard, FullInformer
+from src.models.sda_informer import SDAInformerMinimal, SDAInformerStandard, SDAFullInformer
 from src.datasets import TimeSeriesDataset
 from src.data_simulation.signals import generate_noisy_smooth_signals
 from src.train import train_informer_model
@@ -26,16 +26,18 @@ def main():
     # -------- Configurable Parameters -------- #
     patch_lengths = [4, 8, 12, 16, 20]
     horizons = [2, 4, 6, 8, 10]
-    results_dir = "simulation_results"
+    patch_lengths = [4, 8, 12]
+    horizons = [2, 4]
+    results_dir = "simulation_results_sda"
     os.makedirs(results_dir, exist_ok=True)
-    epochs = 600
+    epochs = 10
     batch_size = 32
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     models_dict = {
-        "Minimal": InformerMinimal,
-        "Standard": InformerStandard,
-        "Full": FullInformer,
+        "Minimal": SDAInformerMinimal,
+        "Standard": SDAInformerStandard,
+        "Full": SDAFullInformer,
     }
 
 
@@ -77,36 +79,36 @@ def main():
                         "MAE": mae,
                     }
                 )
+                if False:
+                    # Short Forecast Plot
+                    plt.figure(figsize=(12, 3))
+                    for i in range(min(3, len(preds))):
+                        plt.plot(trues[i], label="True", color="black")
+                        plt.plot(preds[i], label="Pred", linestyle="--")
+                    plt.title(f"{sig_name} - {model_name} (short)")
+                    plt.grid()
+                    plt.legend()
+                    plt.show()
 
-                # Short Forecast Plot
-                plt.figure(figsize=(12, 3))
-                for i in range(min(3, len(preds))):
-                    plt.plot(trues[i], label="True", color="black")
-                    plt.plot(preds[i], label="Pred", linestyle="--")
-                plt.title(f"{sig_name} - {model_name} (short)")
-                plt.grid()
-                plt.legend()
-                plt.show()
+                    # Long Forecast Plot
+                    plt.figure(figsize=(14, 4))
+                    plt.plot(t[-len(long_trues) :], long_trues, label="True", color="black")
+                    plt.plot(
+                        t[-len(long_preds) :], long_preds, label=f"{model_name}", linestyle="--"
+                    )
+                    plt.title(f"{sig_name} - {model_name} (long)")
+                    plt.grid()
+                    plt.legend()
+                    plt.show()
 
-                # Long Forecast Plot
-                plt.figure(figsize=(14, 4))
-                plt.plot(t[-len(long_trues) :], long_trues, label="True", color="black")
-                plt.plot(
-                    t[-len(long_preds) :], long_preds, label=f"{model_name}", linestyle="--"
-                )
-                plt.title(f"{sig_name} - {model_name} (long)")
-                plt.grid()
-                plt.legend()
-                plt.show()
-
-    # ==== Save and Show Results ====
-    df_results = pd.DataFrame(results)
-    out_csv = os.path.join(results_dir, "noisy_informer_results_full.csv")
-    df_results.to_csv(out_csv, index=False)
-    print(f"\nSaved results to: {out_csv}")
-    print(
-        df_results.sort_values(by=["Signal", "RMSE"]).groupby(["Signal", "Model"]).head(2)
-    )
+        # ==== Save and Show Results ====
+        df_results = pd.DataFrame(results)
+        out_csv = os.path.join(results_dir, "noisy_informer_results_full.csv")
+        df_results.to_csv(out_csv, index=False)
+        print(f"\nSaved results to: {out_csv}")
+        print(
+            df_results.sort_values(by=["Signal", "RMSE"]).groupby(["Signal", "Model"]).head(2)
+        )
 
 if __name__ == "__main__":
     main()

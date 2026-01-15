@@ -1,10 +1,10 @@
 
 
-from .patchtst import PatchTSTMinimal, PatchTSTStandard, PatchTSTFull
-from .autoformer import StandardAutoformer, MinimalAutoformer, FullAutoformer
-from .informer import InformerStandard, InformerMinimal, FullInformer
+from .models.patchtst import PatchTSTMinimal, PatchTSTStandard, PatchTSTFull
+from .models.autoformer import StandardAutoformer, MinimalAutoformer, FullAutoformer
+from .models.informer import InformerStandard, InformerMinimal, FullInformer
 from .datasets import PatchDataset, TimeSeriesDataset
-from .signals import generate_noisy_smooth_signals, generate_smooth_signals
+from .data_simulation.signals import generate_noisy_smooth_signals, generate_smooth_signals
 from .train import train_patch_model, train_informer_model, train_autoformer_model
 from .eval import (
     evaluate_patch_model,

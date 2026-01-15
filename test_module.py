@@ -1,7 +1,7 @@
 # test_module.py
-from compactformer.patchtst import PatchTSTMinimal, PatchTSTStandard, PatchTSTFull
-from compactformer.datasets import PatchDataset
-from compactformer.signals import generate_noisy_smooth_signals
+from src.models.patchtst import PatchTSTMinimal, PatchTSTStandard, PatchTSTFull
+from src.datasets import PatchDataset
+from src.data_simulation.signals import generate_noisy_smooth_signals
 from scripts import run_patchtst_grid
 from scripts import run_informer_grid
 from scripts import run_autoformer_grid

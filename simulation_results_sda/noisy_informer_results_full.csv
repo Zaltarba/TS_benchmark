@@ -1,0 +1,181 @@
+Signal,Model,Patch Length,Horizon,RMSE,MAE
+Sine,Minimal,4,2,0.11784376,0.103412375
+Sine,Standard,4,2,0.19036995,0.16632138
+Sine,Full,4,2,0.09432016,0.07871089
+Sine,Minimal,4,4,0.1544735,0.13501018
+Sine,Standard,4,4,0.2308403,0.20281935
+Sine,Full,4,4,0.14700548,0.11966693
+Sine,Minimal,8,2,0.07675357,0.064337395
+Sine,Standard,8,2,0.1307483,0.11017496
+Sine,Full,8,2,0.10847399,0.09008936
+Sine,Minimal,8,4,0.07604824,0.059775803
+Sine,Standard,8,4,0.13667898,0.11412217
+Sine,Full,8,4,0.14375935,0.11986791
+Sine,Minimal,12,2,0.066765055,0.0536515
+Sine,Standard,12,2,0.21399303,0.18122004
+Sine,Full,12,2,0.10667872,0.087765984
+Sine,Minimal,12,4,0.11621732,0.0961502
+Sine,Standard,12,4,0.13487096,0.11451634
+Sine,Full,12,4,0.15358949,0.12721346
+Cosine + Trend,Minimal,4,2,0.23030128,0.20864521
+Cosine + Trend,Standard,4,2,0.2326043,0.21380323
+Cosine + Trend,Full,4,2,0.103560634,0.08419149
+Cosine + Trend,Minimal,4,4,0.16335514,0.1380764
+Cosine + Trend,Standard,4,4,0.23035474,0.20684262
+Cosine + Trend,Full,4,4,0.14026345,0.117401905
+Cosine + Trend,Minimal,8,2,0.10425904,0.08680812
+Cosine + Trend,Standard,8,2,0.22175297,0.19997548
+Cosine + Trend,Full,8,2,0.09831666,0.07961201
+Cosine + Trend,Minimal,8,4,0.12260584,0.10274222
+Cosine + Trend,Standard,8,4,0.13228822,0.10931934
+Cosine + Trend,Full,8,4,0.10442545,0.08749675
+Cosine + Trend,Minimal,12,2,0.09910991,0.08410455
+Cosine + Trend,Standard,12,2,0.19062313,0.16691056
+Cosine + Trend,Full,12,2,0.11339764,0.09258933
+Cosine + Trend,Minimal,12,4,0.107530415,0.08817841
+Cosine + Trend,Standard,12,4,0.19486383,0.17002703
+Cosine + Trend,Full,12,4,0.119656146,0.1001613
+Exp. Decay × Sine,Minimal,4,2,0.05248967,0.041057486
+Exp. Decay × Sine,Standard,4,2,0.05085786,0.040031265
+Exp. Decay × Sine,Full,4,2,0.0631493,0.050244473
+Exp. Decay × Sine,Minimal,4,4,0.051931866,0.04147373
+Exp. Decay × Sine,Standard,4,4,0.04694377,0.0366899
+Exp. Decay × Sine,Full,4,4,0.06019412,0.04828648
+Exp. Decay × Sine,Minimal,8,2,0.05467962,0.04261134
+Exp. Decay × Sine,Standard,8,2,0.046295777,0.03654759
+Exp. Decay × Sine,Full,8,2,0.057504807,0.045381848
+Exp. Decay × Sine,Minimal,8,4,0.051098138,0.039875533
+Exp. Decay × Sine,Standard,8,4,0.04703707,0.03734888
+Exp. Decay × Sine,Full,8,4,0.058068328,0.046063606
+Exp. Decay × Sine,Minimal,12,2,0.058650013,0.04658408
+Exp. Decay × Sine,Standard,12,2,0.043940593,0.034800645
+Exp. Decay × Sine,Full,12,2,0.056161135,0.044297226
+Exp. Decay × Sine,Minimal,12,4,0.058728047,0.04658989
+Exp. Decay × Sine,Standard,12,4,0.046003085,0.036455013
+Exp. Decay × Sine,Full,12,4,0.0635358,0.050741173
+2nd Order Polynomial,Minimal,4,2,0.29064885,0.277191
+2nd Order Polynomial,Standard,4,2,0.46896785,0.45801842
+2nd Order Polynomial,Full,4,2,0.2830581,0.27066994
+2nd Order Polynomial,Minimal,4,4,0.30625364,0.2841173
+2nd Order Polynomial,Standard,4,4,0.37386122,0.35960045
+2nd Order Polynomial,Full,4,4,0.3364164,0.32481378
+2nd Order Polynomial,Minimal,8,2,0.21957672,0.2033944
+2nd Order Polynomial,Standard,8,2,0.45056775,0.44014964
+2nd Order Polynomial,Full,8,2,0.2541069,0.24155903
+2nd Order Polynomial,Minimal,8,4,0.27189922,0.2583751
+2nd Order Polynomial,Standard,8,4,0.3759249,0.36433798
+2nd Order Polynomial,Full,8,4,0.2882965,0.27612802
+2nd Order Polynomial,Minimal,12,2,0.29637578,0.28337508
+2nd Order Polynomial,Standard,12,2,0.50923127,0.5000126
+2nd Order Polynomial,Full,12,2,0.23127371,0.214309
+2nd Order Polynomial,Minimal,12,4,0.2914904,0.27669188
+2nd Order Polynomial,Standard,12,4,0.59763545,0.5880791
+2nd Order Polynomial,Full,12,4,0.29154742,0.27940312
+Log × Sine,Minimal,4,2,0.1017259,0.0922811
+Log × Sine,Standard,4,2,0.13101448,0.1164031
+Log × Sine,Full,4,2,0.07836282,0.0652442
+Log × Sine,Minimal,4,4,0.14041603,0.12449177
+Log × Sine,Standard,4,4,0.19391572,0.17397858
+Log × Sine,Full,4,4,0.116969325,0.10904271
+Log × Sine,Minimal,8,2,0.13815059,0.12884836
+Log × Sine,Standard,8,2,0.14420636,0.12599753
+Log × Sine,Full,8,2,0.08224295,0.0721022
+Log × Sine,Minimal,8,4,0.17615233,0.16247746
+Log × Sine,Standard,8,4,0.23337929,0.21135595
+Log × Sine,Full,8,4,0.123231955,0.112773165
+Log × Sine,Minimal,12,2,0.09310194,0.07429103
+Log × Sine,Standard,12,2,0.15574251,0.1441943
+Log × Sine,Full,12,2,0.07920175,0.071144424
+Log × Sine,Minimal,12,4,0.07950949,0.06711605
+Log × Sine,Standard,12,4,0.18130162,0.16764829
+Log × Sine,Full,12,4,0.11697459,0.10450366
+Gaussian Bump,Minimal,4,2,0.059495367,0.046865743
+Gaussian Bump,Standard,4,2,0.08232699,0.067312434
+Gaussian Bump,Full,4,2,0.07653542,0.060968086
+Gaussian Bump,Minimal,4,4,0.062133815,0.049951687
+Gaussian Bump,Standard,4,4,0.11075518,0.09528651
+Gaussian Bump,Full,4,4,0.06836137,0.055415012
+Gaussian Bump,Minimal,8,2,0.062079698,0.05077131
+Gaussian Bump,Standard,8,2,0.0874376,0.07085423
+Gaussian Bump,Full,8,2,0.06381233,0.0498051
+Gaussian Bump,Minimal,8,4,0.062670924,0.050479617
+Gaussian Bump,Standard,8,4,0.091015264,0.073203735
+Gaussian Bump,Full,8,4,0.06541861,0.052757844
+Gaussian Bump,Minimal,12,2,0.061504807,0.049193937
+Gaussian Bump,Standard,12,2,0.08156631,0.06657158
+Gaussian Bump,Full,12,2,0.06691699,0.05210192
+Gaussian Bump,Minimal,12,4,0.06294795,0.050308827
+Gaussian Bump,Standard,12,4,0.1014903,0.08515937
+Gaussian Bump,Full,12,4,0.069979824,0.056662243
+Long Period Sine,Minimal,4,2,0.0901574,0.074991
+Long Period Sine,Standard,4,2,0.10709739,0.09357259
+Long Period Sine,Full,4,2,0.08142817,0.06861109
+Long Period Sine,Minimal,4,4,0.09687326,0.08157022
+Long Period Sine,Standard,4,4,0.103231266,0.08601101
+Long Period Sine,Full,4,4,0.0988039,0.08256834
+Long Period Sine,Minimal,8,2,0.11192556,0.09232254
+Long Period Sine,Standard,8,2,0.09912199,0.0860951
+Long Period Sine,Full,8,2,0.07181743,0.059548933
+Long Period Sine,Minimal,8,4,0.108899355,0.09142339
+Long Period Sine,Standard,8,4,0.13896781,0.1217086
+Long Period Sine,Full,8,4,0.10105134,0.08606806
+Long Period Sine,Minimal,12,2,0.11754142,0.10017416
+Long Period Sine,Standard,12,2,0.12828906,0.1129352
+Long Period Sine,Full,12,2,0.06973266,0.058728475
+Long Period Sine,Minimal,12,4,0.12880054,0.109858796
+Long Period Sine,Standard,12,4,0.21733598,0.18605389
+Long Period Sine,Full,12,4,0.09240426,0.07521427
+Cubic Polynomial,Minimal,4,2,0.111271344,0.09889056
+Cubic Polynomial,Standard,4,2,0.37779218,0.3341141
+Cubic Polynomial,Full,4,2,0.15456377,0.1403523
+Cubic Polynomial,Minimal,4,4,0.2112252,0.1915804
+Cubic Polynomial,Standard,4,4,0.43076718,0.4144008
+Cubic Polynomial,Full,4,4,0.18189397,0.16809823
+Cubic Polynomial,Minimal,8,2,0.1108499,0.09917981
+Cubic Polynomial,Standard,8,2,0.31585205,0.30100134
+Cubic Polynomial,Full,8,2,0.21041623,0.19845006
+Cubic Polynomial,Minimal,8,4,0.17729226,0.16259006
+Cubic Polynomial,Standard,8,4,0.32747057,0.31036276
+Cubic Polynomial,Full,8,4,0.1323018,0.11670062
+Cubic Polynomial,Minimal,12,2,0.17298093,0.16041167
+Cubic Polynomial,Standard,12,2,0.299486,0.28956974
+Cubic Polynomial,Full,12,2,0.172023,0.15832034
+Cubic Polynomial,Minimal,12,4,0.20344682,0.18858188
+Cubic Polynomial,Standard,12,4,0.2969637,0.2849775
+Cubic Polynomial,Full,12,4,0.19334938,0.17763416
+Exponential Growth,Minimal,4,2,0.19460078,0.17814788
+Exponential Growth,Standard,4,2,0.45726326,0.4167134
+Exponential Growth,Full,4,2,0.23013744,0.21826912
+Exponential Growth,Minimal,4,4,0.29707596,0.28574485
+Exponential Growth,Standard,4,4,0.4854932,0.4761759
+Exponential Growth,Full,4,4,0.2672591,0.25560793
+Exponential Growth,Minimal,8,2,0.2871563,0.2763885
+Exponential Growth,Standard,8,2,0.6015373,0.5956265
+Exponential Growth,Full,8,2,0.2202407,0.20697956
+Exponential Growth,Minimal,8,4,0.2151433,0.1997623
+Exponential Growth,Standard,8,4,0.39107287,0.38017207
+Exponential Growth,Full,8,4,0.21541081,0.2044716
+Exponential Growth,Minimal,12,2,0.23439996,0.22023635
+Exponential Growth,Standard,12,2,0.32989106,0.3183336
+Exponential Growth,Full,12,2,0.17965917,0.16648802
+Exponential Growth,Minimal,12,4,0.22553529,0.21147127
+Exponential Growth,Standard,12,4,0.35855842,0.34591353
+Exponential Growth,Full,12,4,0.21217796,0.19986829
+Cosine Envelope × Sine,Minimal,4,2,0.10883292,0.088406496
+Cosine Envelope × Sine,Standard,4,2,0.1390464,0.11523084
+Cosine Envelope × Sine,Full,4,2,0.08934783,0.074305885
+Cosine Envelope × Sine,Minimal,4,4,0.11547305,0.088456675
+Cosine Envelope × Sine,Standard,4,4,0.14699966,0.11313651
+Cosine Envelope × Sine,Full,4,4,0.13454837,0.11099157
+Cosine Envelope × Sine,Minimal,8,2,0.05437661,0.04318138
+Cosine Envelope × Sine,Standard,8,2,0.09147145,0.07252998
+Cosine Envelope × Sine,Full,8,2,0.103010446,0.083191894
+Cosine Envelope × Sine,Minimal,8,4,0.07554307,0.061659798
+Cosine Envelope × Sine,Standard,8,4,0.12710756,0.09544158
+Cosine Envelope × Sine,Full,8,4,0.13395743,0.10494165
+Cosine Envelope × Sine,Minimal,12,2,0.062694,0.050803315
+Cosine Envelope × Sine,Standard,12,2,0.10704876,0.08608401
+Cosine Envelope × Sine,Full,12,2,0.08167741,0.066897884
+Cosine Envelope × Sine,Minimal,12,4,0.0697026,0.05651194
+Cosine Envelope × Sine,Standard,12,4,0.13741507,0.109743685
+Cosine Envelope × Sine,Full,12,4,0.13908516,0.11529941

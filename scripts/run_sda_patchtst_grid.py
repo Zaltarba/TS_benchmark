@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 import torch
 from torch.utils.data import DataLoader
 
-from src.models.patchtst import PatchTSTMinimal, PatchTSTStandard, PatchTSTFull
+from src.models.sda_patchtst import PatchTSTMinimal, PatchTSTStandard, PatchTSTFull
 from src.datasets import PatchDataset
 from src.data_simulation.signals import generate_noisy_smooth_signals
 from src.train import train_patch_model
@@ -34,13 +34,16 @@ def main():
     # -------------------------------
     patch_lengths = [4, 8, 12, 16, 20]
     horizons = [4, 8, 12, 16, 20]
+    patch_lengths = [4, 8, 12,]
+    horizons = [4, 8,]
     d_models = [8]
     num_heads_list = [2]
     dim_feedforwards = [32]
     num_layers_list = [2]
 
     epochs = 600
-    results_dir = "simulation_results"
+    epochs = 300
+    results_dir = "simulation_results_sda"
     os.makedirs(results_dir, exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -139,8 +142,9 @@ def main():
     print("\nTop 3 configs per signal and model:")
     print(df_results_sorted.groupby(["Signal", "Model"]).head(3))
 
-    # ---- Plot Predictions ----
-    plot_predictions_vs_truth(preds_dict, n_examples=3)
+    # ---- Plot Predictions ---
+    if False:
+        plot_predictions_vs_truth(preds_dict, n_examples=3)
 
     # ---- Plot Long Window Forecasts ----
     for sig in truth_series.keys():

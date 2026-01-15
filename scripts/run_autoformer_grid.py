@@ -14,11 +14,11 @@ from sklearn.preprocessing import StandardScaler
 import torch
 from torch.utils.data import DataLoader
 
-from compactformer.autoformer import StandardAutoformer, MinimalAutoformer, FullAutoformer
-from compactformer.datasets import TimeSeriesDataset
-from compactformer.signals import generate_noisy_smooth_signals
-from compactformer.train import train_autoformer_model
-from compactformer.eval import evaluate_autoformer_model, evaluate_autoformer_long
+from src.models.autoformer import StandardAutoformer, MinimalAutoformer, FullAutoformer
+from src.datasets import TimeSeriesDataset
+from src.data_simulation.signals import generate_noisy_smooth_signals
+from src.train import train_autoformer_model
+from src.eval import evaluate_autoformer_model, evaluate_autoformer_long
 
 
 # ------------- Main Script -------------- #
